@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -6,30 +6,39 @@
     outline: none;
 }
 
-body{
+body {
     background: url(./img/background.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-.container{
-    background-color: #d1d1d1;
-    width: 500px;
-    border-radius: 5px;
-    padding: 20px;
-    margin: 100px auto 0;
+.global {
+    min-height: 100vh;
 }
 
-.input-task{
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background-color: #d1d1d1;
+    width: 100%; 
+    max-width: 500px; 
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px auto;
+}
+
+.input-task {
     border: none;
     border-radius: 5px;
-    width: 300px;
+    width: 100%; 
     height: 40px;
     padding-left: 10px;
     font-size: 18px;
 }
 
-.button-add-task{
+.button-add-task {
     border: none;
     border-radius: 5px;
     height: 40px;
@@ -37,25 +46,24 @@ body{
     color: #fff;
     font-size: 17px;
     padding: 0 15px;
-    float: right;
     cursor: pointer;
     font-weight: 700;
+    margin-top: 10px;
 }
 
-.button-add-task:hover{
+.button-add-task:hover {
     color: #D9C2A4;
     background-color: #fff;
     transition: 0.9s;
 }
 
-.list-tasks{
+.list-tasks {
     width: 100%;
     list-style: none;
     margin-top: 30px;
-
 }
 
-.task{
+.task {
     background-color: #f2f2f2;
     box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.2);
     display: flex;
@@ -68,18 +76,36 @@ body{
     cursor: pointer;
 }
 
-.task:hover img{
+.task:hover img {
     opacity: 1;
 }
 
-
-img{
+img {
     height: 25px;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
 }
 
-.done{
+.done {
     background-color: #228B22;
     text-decoration: line-through;
+}
+
+
+@media (max-width: 500px) {
+    .global {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .container {
+        width: 90%;
+        padding-top: 5%; 
+    }
+
+    .input-task,
+    .button-add-task {
+        width: 100%; 
+        margin-top: 10px; 
+    }
 }
